@@ -1,0 +1,50 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Uselessle", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "Progress"
+})
+
+Tab:AddColorpicker({
+	Name = "Colorpicker",
+	Default = Color3.fromRGB(255, 0, 0),
+	Callback = function(Value)
+		print(Value)
+	end	  
+})
+
+local Tab = Window:MakeTab({
+	Name = "Auto farms",
+	Icon = "rbxassetid://10958412687",
+	PremiumOnly = false
+})
+
+local Tab = Window:MakeTab({
+	Name = "Shindo life",
+	Icon = "rbxassetid://10958412687",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "???"
+})
+
+OrionLib:MakeNotification({
+	Name = "Uselessle!",
+	Content = "??? @ Vikingkid",
+	Image = "rbxassetid://10958412687",
+	Time = 7
+})
+
+OrionLib:MakeNotification({
+	Name = "Welcome To My Hub!",
+	Content = "Progress",
+	Image = "rbxassetid://10958412687",
+	Time = 3
+})
