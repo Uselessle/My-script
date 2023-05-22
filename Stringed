@@ -64,3 +64,10 @@ local Slider = Tab:CreateSlider({
    -- The variable (50) is a number which correlates to the value the slider is currently at
    end,
 })
+
+local Button = Tab:CreateButton({
+   Name = "MM2 Script (not made by me)",
+   Callback = function()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/Ethanoj1/EclipseMM2/master/Script", true))()ee
+   end,
+})
