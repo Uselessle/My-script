@@ -108,3 +108,5 @@ local Button = Tab:CreateButton({
   loadstring(game:HttpGet("https://codeberg.org/CokkaHub/Loadstring/raw/branch/main/CokkaHub.lua"))()
   end 
 })
+
+lua ./tests.lua
