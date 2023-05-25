@@ -5,7 +5,7 @@ local Window = Rayfield:CreateWindow({
    LoadingTitle = "Stringed Premium",
    LoadingSubtitle = "Stringed….. loading….",
    ConfigurationSaving = {
-      Enabled = false,
+      Disabled = true,
       FolderName = nil, -- Create a custom folder for your hub/game
       FileName = "Stringed files"
    },
@@ -74,3 +74,5 @@ local Button = Tab:CreateButton({
   loadstring(game:HttpGet("https://codeberg.org/CokkaHub/Loadstring/raw/branch/main/CokkaHub.lua"))()
   end 
 })
+
+local Tab = Window:CreateTab("  ", 4483362458) -- Title, Image
