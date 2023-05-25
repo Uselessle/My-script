@@ -75,4 +75,11 @@ local Button = Tab:CreateButton({
   end 
 })
 
-local Tab = Window:CreateTab("  ", 4483362458) -- Title, Image
+local Tab = Window:CreateTab("Da hood", 4483362458) -- Title, Image
+
+local Button = Tab:CreateButton({
+   Name = "Swag hub",
+   Callback = function()
+  loadstring(game:HttpGet('https://raw.githubusercontent.com/lerkermer/lua-projects/master/SwagModeV002'))()
+  end 
+})
