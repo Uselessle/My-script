@@ -2702,7 +2702,7 @@ end)
 
 runFunction(function()
 	local AutoLeaveDelay = {Value = 1}
-	local AutoPlayAgain = {Enabled = false}
+	local AutoPlayAgain = {Enabled = true}
 	local AutoLeaveStaff = {Enabled = true}
 	local AutoLeaveStaff2 = {Enabled = true}
 	local AutoLeaveRandom = {Enabled = false}
@@ -2734,7 +2734,7 @@ runFunction(function()
 						bedwars.LobbyClientEvents.leaveParty()
 					end
 					if AutoLeaveStaff2.Enabled then 
-						warningNotification("Vape", "Staff Detected : "..(plr.DisplayName and plr.DisplayName.." ("..plr.Name..")" or plr.Name).." : Play legit like nothing happened to have the highest chance of not getting banned.", 60)
+						warningNotification("Moon", "Staff Detected : "..(plr.DisplayName and plr.DisplayName.." ("..plr.Name..")" or plr.Name).." : Play legit like nothing happened to have the highest chance of not getting banned.", 60)
 						GuiLibrary.SaveSettings = function() end
 						for i,v in pairs(GuiLibrary.ObjectsThatCanBeSaved) do 
 							if v.Type == "OptionsButton" then
@@ -2750,14 +2750,14 @@ runFunction(function()
 					else
 						GuiLibrary.SelfDestruct()
 						game:GetService("StarterGui"):SetCore("SendNotification", {
-							Title = "Vape",
+							Title = "Moon",
 							Text = "Staff Detected\n"..(plr.DisplayName and plr.DisplayName.." ("..plr.Name..")" or plr.Name),
 							Duration = 60,
 						})
 					end
 					return
 				else
-					warningNotification("Vape", "Staff Detected : "..(plr.DisplayName and plr.DisplayName.." ("..plr.Name..")" or plr.Name), 60)
+					warningNotification("Moon", "Staff Detected : "..(plr.DisplayName and plr.DisplayName.." ("..plr.Name..")" or plr.Name), 60)
 				end
 			end
 		end)
