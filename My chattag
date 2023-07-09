@@ -1,0 +1,38 @@
+local function AddTag(TextChatMessage)
+    local taggedMsg = Instance.new("TextChatMessageProperties")
+    local newTag = string.format("<font color=\"rgb(108, 66, 245)\" weight=\"heavy\">%s</font>", "Commet Tag")
+    taggedMsg.PrefixText = string.format("%s %s", newTag, TextChatMessage.PrefixText)
+    taggedMsg.Text = TextChatMessage.Text
+    return taggedMsg
+end
+
+local function CapitalizeName(TextChatMessage)
+    local new = Instance.new("TextChatMessageProperties")
+    new.PrefixText = string.upper(TextChatMessage.PrefixText)
+    new.Text = TextChatMessage.Text
+    return new
+end
+
+local rnd = Random.new()
+local function ColorText(TextChatMessage)
+    local coloredMsg = Instance.new("TextChatMessageProperties")
+    coloredMsg.PrefixText = TextChatMessage.PrefixText
+    local color = Color3.new(rnd:NextNumber(), rnd:NextNumber(), rnd:NextNumber())
+    coloredMsg.Text = string.format("<font color=\"rgb(%i, %i, %i)\">%s</font>", color.R*255, color.G*255, color.B*255, TextChatMessage.Text)
+    return coloredMsg
+end
+
+game:GetService("TextChatService").OnIncomingMessage = function(TextChatMessage)
+    local FakeWrapperMessage = {Text = TextChatMessage.Text, PrefixText = TextChatMessage.PrefixText}
+    for Priority, Callback in {CapitalizeName, AddTag, ColorText} do
+        local newTCMP = Callback(FakeWrapperMessage)
+        if newTCMP and newTCMP:IsA("TextChatMessageProperties") then
+            FakeWrapperMessage.Text = newTCMP.Text
+            FakeWrapperMessage.PrefixText = newTCMP.PrefixText
+        end
+    end
+    local final = Instance.new("TextChatMessageProperties")
+    final.PrefixText = FakeWrapperMessage.PrefixText
+    final.Text = FakeWrapperMessage.Text
+    return final
+end
